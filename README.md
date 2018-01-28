@@ -1,5 +1,5 @@
-# java-jca-exercise
-Java JCA, JCE の練習
+# study-java8-jca-jsse
+Java8における JCA, JCE の練習
 
 TODO:
 - ※各種練習で、プロバイダの一覧取得などもしてみる。
