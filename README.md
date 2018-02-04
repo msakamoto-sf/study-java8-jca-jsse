@@ -38,6 +38,9 @@ mvnw package
 jarファイルから実行:
 java -jar target/study-java8-jca-jsse-(version).jar
 
+非推奨となった古い鍵長・アルゴリズム・プロトコル含め、可能な限り利用できるようにした設定ファイルで起動:
+java -Djava.security.properties=bogus-java-security.properties target/study-java8-jca-jsse-(version).jar
+
 Mavenプロジェクトから直接実行:
 mvnw exec:java
 ```
