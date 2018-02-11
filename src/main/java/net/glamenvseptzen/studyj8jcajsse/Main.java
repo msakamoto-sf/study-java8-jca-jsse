@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import net.glamenvseptzen.studyj8jcajsse.subcommand.DumpMajorJcaJssePolicy;
+import net.glamenvseptzen.studyj8jcajsse.subcommand.DumpMessageDigestProviders;
 import net.glamenvseptzen.studyj8jcajsse.subcommand.DumpSecureRandomProviders;
 import net.glamenvseptzen.studyj8jcajsse.subcommand.DumpSecurityProviders;
 
@@ -17,7 +18,35 @@ public class Main {
         COMMANDS = new LinkedHashMap<>();
         COMMANDS.put("dump-providers", new DumpSecurityProviders());
         COMMANDS.put("dump-secure-random-providers", new DumpSecureRandomProviders());
+        COMMANDS.put("dump-message-digest-providers", new DumpMessageDigestProviders());
         COMMANDS.put("dump-major-policy", new DumpMajorJcaJssePolicy());
+    }
+
+    public static String stripCRLF(final Object o) {
+        return stripCRLF(o.toString());
+    }
+
+    public static String stripCRLF(final String s) {
+        return s.replace("\r", "").replace("\n", "");
+    }
+
+    public static String dumpHex(final byte[] src) {
+        final HexDumper hd = new HexDumper();
+        hd.setPrefix("0x");
+        hd.setSeparator(",");
+        hd.setToUpperCase(false);
+        return hd.dump(src);
+    }
+
+    public static byte[] toba(int... src) {
+        if (src.length == 0) {
+            return new byte[] {};
+        }
+        final byte[] r = new byte[src.length];
+        for (int i = 0; i < src.length; i++) {
+            r[i] = (byte) src[i];
+        }
+        return r;
     }
 
     public static void main(String[] args) throws Exception {

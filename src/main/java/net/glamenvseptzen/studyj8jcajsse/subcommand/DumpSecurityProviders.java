@@ -5,6 +5,7 @@ import java.security.Security;
 import java.util.Set;
 
 import net.glamenvseptzen.studyj8jcajsse.ISubCommand;
+import net.glamenvseptzen.studyj8jcajsse.Main;
 
 public class DumpSecurityProviders implements ISubCommand {
 
@@ -23,7 +24,7 @@ public class DumpSecurityProviders implements ISubCommand {
             System.out.println("  [alg],[type],[classname],[toString]");
             for (Provider.Service s : services) {
                 System.out.println("  " + s.getAlgorithm() + "," + s.getType() + "," + s.getClassName() + ",");
-                System.out.println("    " + s.toString().replace("\r", "").replace("\n", ""));
+                System.out.println("    " + Main.stripCRLF(s));
             }
         }
     }
