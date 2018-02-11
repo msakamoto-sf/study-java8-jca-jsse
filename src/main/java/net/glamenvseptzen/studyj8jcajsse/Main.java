@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import net.glamenvseptzen.studyj8jcajsse.subcommand.DumpMajorJcaJssePolicy;
+import net.glamenvseptzen.studyj8jcajsse.subcommand.DumpSecureRandomProviders;
 import net.glamenvseptzen.studyj8jcajsse.subcommand.DumpSecurityProviders;
 
 public class Main {
@@ -15,6 +16,7 @@ public class Main {
     static {
         COMMANDS = new LinkedHashMap<>();
         COMMANDS.put("dump-providers", new DumpSecurityProviders());
+        COMMANDS.put("dump-secure-random-providers", new DumpSecureRandomProviders());
         COMMANDS.put("dump-major-policy", new DumpMajorJcaJssePolicy());
     }
 

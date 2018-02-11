@@ -3,7 +3,6 @@ Java8における JCA, JCE の勉強と練習
 
 TODO:
 - ※各種練習で、プロバイダの一覧取得などもしてみる。
-- (擬似)乱数ジェネレータ : SecureRandom
 - 対称鍵暗号（ブロック暗号） : Cipher
 - 対象鍵暗号（ストリーム暗号） : CipherStream
 - Password-based Encryption (PEB)
