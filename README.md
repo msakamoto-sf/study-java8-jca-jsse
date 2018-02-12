@@ -4,13 +4,21 @@ Java8における JCA, JCE の勉強と練習
 TODO:
 - ※各種練習で、プロバイダの一覧取得などもしてみる。
 - 対称鍵暗号（ブロック暗号） : Cipher
+  - 3-DES
+  - Blowfish
+  - AES
 - 対象鍵暗号（ストリーム暗号） : CipherStream
+  - RC2
+  - RC4
+  - RC5
 - Password-based Encryption (PEB)
-- 公開鍵暗号
+  - ex: PBEWithMD5AndDES
+  - ex: PBEWithHmacSHA256AndAES_128
+- 公開鍵暗号 : RSA
 - 楕円曲線暗号(ECC)
 - 鍵ジェネレータ : Key, KeyPair, KeySpec, KeyFactory, SecretKeyFactory, KeyPairGenerator, KeyGenerator
 - メッセージ認証コード(MAC) : Mac
-- デジタル署名アルゴリズム : Signature
+- デジタル署名アルゴリズム : Signature, DSA
 - 鍵合意アルゴリズム : KeyAgreement
 - 証明書 : CertificateFactory
 - KeyStore(鍵ストレージ) : JKS
