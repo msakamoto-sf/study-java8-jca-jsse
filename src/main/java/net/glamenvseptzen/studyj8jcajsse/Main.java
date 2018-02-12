@@ -13,8 +13,13 @@ import net.glamenvseptzen.studyj8jcajsse.subcommand.DumpSecureRandomProviders;
 import net.glamenvseptzen.studyj8jcajsse.subcommand.DumpSecurityProviders;
 
 public class Main {
+    static final byte[] BYTES_00_FF;
     static final Map<String, ISubCommand> COMMANDS;
     static {
+        BYTES_00_FF = new byte[256];
+        for (int i = 0; i <= 0xFF; i++) {
+            BYTES_00_FF[i] = (byte) i;
+        }
         COMMANDS = new LinkedHashMap<>();
         COMMANDS.put("dump-providers", new DumpSecurityProviders());
         COMMANDS.put("dump-secure-random-providers", new DumpSecureRandomProviders());
